@@ -1,0 +1,19 @@
+{
+    "name": "fomalhautlab/fomalhaut",
+    "authors": [
+        {
+            "name": "yellowbig",
+            "email": "dahwang@126.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "exclude-from-classmap": [
+            "src/**/Tests/"
+        ],
+        "psr-4": {
+            "Fomalhaut\\": "src/Fomalhaut"
+        }
+    }
+}
