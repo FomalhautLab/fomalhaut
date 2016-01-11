@@ -13,10 +13,14 @@
  * @author Huang Shuo <dahwang@126.com>
  */
 
-namespace Fomalhaut\Bundle\UserBundle;
+namespace Fomalhaut\Bundle\CoreBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class FomalhautUserBundle extends Bundle
+class FomalhautCoreBundle extends Bundle
 {
+    public function getParent()
+    {
+        return 'ElcodiCoreBundle';
+    }
 }

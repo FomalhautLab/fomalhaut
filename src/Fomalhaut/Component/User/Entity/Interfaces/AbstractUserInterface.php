@@ -13,10 +13,16 @@
  * @author Huang Shuo <dahwang@126.com>
  */
 
-namespace Fomalhaut\Bundle\UserBundle;
+namespace Fomalhaut\Component\User\Entity\Interfaces;
 
-use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Symfony\Component\Security\Core\User\UserInterface;
 
-class FomalhautUserBundle extends Bundle
+/**
+ * Interface AbstractUserInterface
+ * @package Fomalhaut\Component\User\Entity\Interfaces
+ */
+Interface AbstractUserInterface
+    extends UserInterface
 {
+
 }

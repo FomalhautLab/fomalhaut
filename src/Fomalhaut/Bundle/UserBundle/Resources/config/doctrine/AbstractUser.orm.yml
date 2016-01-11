@@ -1,0 +1,29 @@
+Fomalhaut\Component\User\Entity\Abstracts\AbstractUser:
+    type: mappedSuperclass
+    fields:
+        password:
+            column: password
+            type: string
+            length: 255
+            nullable: true
+        email:
+            column: email
+            type: string
+            length: 255
+            nullable: true
+        token:
+            column: token
+            type: string
+            length: 255
+            nullable: false
+            unique: true
+        firstname:
+            column: firstname
+            type: string
+            length: 255
+            nullable: true
+        lastname:
+            column: lastname
+            type: string
+            length: 255
+            nullable: true

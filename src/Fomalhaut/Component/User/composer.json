@@ -1,0 +1,21 @@
+{
+    "name": "fomalhaut/user",
+    "description": "Fomalhaut User Component",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "yellowbig",
+            "email": "dahwang@126.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "exclude-from-classmap": [
+            "/Tests/"
+        ],
+        "psr-4": {
+            "Fomalhaut\\Component\\User\\": ""
+        }
+    }
+}
