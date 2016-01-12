@@ -42,6 +42,14 @@ class Configuration extends AbstractConfiguration
                             'default',
                             true
                         ))
+                        ->append($this->addMappingNode(
+                            'user',
+                            'Fomalhaut\Component\User\Entity\User',
+                            '@FomalhautUserBundle/Resources/config/doctrine/User.orm.yml',
+                            'default',
+                            true
+                        ))
+                        //todo:Add more mapping-nodes
                     ->end()
                 ->end()
             ->end();

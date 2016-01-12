@@ -80,6 +80,13 @@ class FomalhautUserExtension extends AbstractExtension implements EntitiesOverri
             'fomalhaut.entity.abstract_user.mapping_file' => $config['mapping']['abstract_user']['mapping_file'],
             'fomalhaut.entity.abstract_user.manager' => $config['mapping']['abstract_user']['manager'],
             'fomalhaut.entity.abstract_user.enabled' => $config['mapping']['abstract_user']['enabled'],
+
+            'fomalhaut.entity.user.class' => $config['mapping']['user']['class'],
+            'fomalhaut.entity.user.mapping_file' => $config['mapping']['user']['mapping_file'],
+            'fomalhaut.entity.user.manager' => $config['mapping']['user']['manager'],
+            'fomalhaut.entity.user.enabled' => $config['mapping']['user']['enabled'],
+
+            //todo:other parametrization definition
         ];
     }
 
@@ -104,6 +111,7 @@ class FomalhautUserExtension extends AbstractExtension implements EntitiesOverri
     {
         return [
             //todo:'Fomalhaut\Component\____\Entity\Interfaces\___Interface' => 'fomalhaut.entity.___.class',
+            'Fomalhaut\Component\User\Entity\Interfaces\UserInterface' => 'fomalhaut.entity.user.class',
         ];
     }
 

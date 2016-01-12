@@ -1,0 +1,9 @@
+Fomalhaut\Component\User\Entity\User:
+    type: entity
+    repositoryClass: Fomalhaut\Component\User\Repository\UserRepository
+    table: user
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO

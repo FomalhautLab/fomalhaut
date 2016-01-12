@@ -36,6 +36,8 @@ class MappingCompilerPass extends AbstractFomalhautMappingCompilerPass
                 $container,
                 [
                     'abstract_user',
+                    'user',
+                    //todo:other entity mappings
                 ]
             );
     }
