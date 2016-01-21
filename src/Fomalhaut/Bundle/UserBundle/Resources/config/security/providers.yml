@@ -1,0 +1,7 @@
+security:
+
+    providers:
+        user:
+            entity:
+                class: %fomalhaut.entity.user.class%
+                property: email

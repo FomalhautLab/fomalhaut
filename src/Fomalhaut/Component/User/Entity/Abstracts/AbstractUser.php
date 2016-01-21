@@ -57,6 +57,13 @@ class AbstractUser implements AbstractUserInterface
     protected $lastname;
 
     /**
+     * @var int
+     *
+     * gender
+     */
+    protected $gender;
+
+    /**
      * User roles.
      *
      * @return string[] Roles
@@ -182,6 +189,30 @@ class AbstractUser implements AbstractUserInterface
     public function setLastname($lastname)
     {
         $this->lastname = $lastname;
+
+        return $this;
+    }
+
+    /**
+     * Get gender.
+     *
+     * @return int Gender
+     */
+    public function getGender()
+    {
+        return (int) $this->gender;
+    }
+
+    /**
+     * Set gender.
+     *
+     * @param int $gender Gender
+     *
+     * @return $this Self object
+     */
+    public function setGender($gender)
+    {
+        $this->gender = (int) $gender;
 
         return $this;
     }

@@ -100,7 +100,8 @@ class FomalhautUserExtension extends AbstractExtension implements EntitiesOverri
     public function getConfigFiles(array $config)
     {
         return [
-            //todo:ConfigFileA,
+            //todo:ConfigFiles
+            'providers',
         ];
     }
 

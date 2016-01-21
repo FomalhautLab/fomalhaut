@@ -1,0 +1,15 @@
+services:
+
+    #
+    # Factories
+    #
+
+    #
+    # Factory for entity user
+    #
+    fomalhaut.factory.user:
+        class: Fomalhaut\Component\User\Factory\UserFactory
+        calls:
+            - [setEntityNamespace, ["%fomalhaut.entity.user.class%"]]
+            - [setDateTimeFactory, ["@elcodi.factory.datetime"]]
+
