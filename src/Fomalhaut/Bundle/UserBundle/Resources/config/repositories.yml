@@ -1,0 +1,14 @@
+services:
+
+    #
+    # Repositories
+    #
+
+    #
+    # Repository for entity user
+    #
+    fomalhaut.repository.user:
+        parent: elcodi.abstract_repository
+        arguments:
+            - %fomalhaut.entity.user.class%
+

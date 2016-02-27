@@ -24,5 +24,60 @@ use Symfony\Component\Security\Core\User\UserInterface;
 Interface AbstractUserInterface
     extends UserInterface
 {
+    /**
+     * Sets Firstname.
+     *
+     * @param string $firstname Firstname
+     *
+     * @return $this Self object
+     */
+    public function setFirstname($firstname);
 
+    /**
+     * Get Firstname.
+     *
+     * @return string Firstname
+     */
+    public function getFirstname();
+
+    /**
+     * Sets Lastname.
+     *
+     * @param string $lastname Lastname
+     *
+     * @return $this Self object
+     */
+    public function setLastname($lastname);
+
+    /**
+     * Get Lastname.
+     *
+     * @return string Lastname
+     */
+    public function getLastname();
+
+    /**
+     * Set email.
+     *
+     * @param string $email
+     *
+     * @return $this Self object
+     */
+    public function setEmail($email);
+
+    /**
+     * Return email.
+     *
+     * @return string Email
+     */
+    public function getEmail();
+
+    /**
+     * Set password.
+     *
+     * @param string $password
+     *
+     * @return $this Self object
+     */
+    public function setPassword($password);
 }

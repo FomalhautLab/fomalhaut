@@ -102,6 +102,9 @@ class FomalhautUserExtension extends AbstractExtension implements EntitiesOverri
         return [
             //todo:ConfigFiles
             'providers',
+            'factories',
+            'repositories',
+            'objectManagers',
         ];
     }
 

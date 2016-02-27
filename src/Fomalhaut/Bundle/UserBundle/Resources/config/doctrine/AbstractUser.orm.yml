@@ -1,6 +1,11 @@
 Fomalhaut\Component\User\Entity\Abstracts\AbstractUser:
     type: mappedSuperclass
     fields:
+        username:
+            column: username
+            type: string
+            length: 255
+            nullable: true
         password:
             column: password
             type: string
@@ -11,12 +16,11 @@ Fomalhaut\Component\User\Entity\Abstracts\AbstractUser:
             type: string
             length: 255
             nullable: true
-        token:
-            column: token
+        phone:
+            column: phone
             type: string
-            length: 255
-            nullable: false
-            unique: true
+            length: 15
+            nullable: true
         firstname:
             column: firstname
             type: string

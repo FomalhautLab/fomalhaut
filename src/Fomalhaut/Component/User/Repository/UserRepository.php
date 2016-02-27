@@ -23,5 +23,36 @@ use Doctrine\ORM\EntityRepository;
  */
 class UserRepository extends EntityRepository
 {
+    public function findOneByUsername($username)
+    {
+        $user = $this->createQueryBuilder('u')
+            ->where('u.username = :username')
+            ->setParameter('username', $username)
+            ->getQuery()
+            ->getResult();
 
+        return $user;
+    }
+
+    public function findOneByEmail($email)
+    {
+        $user = $this->createQueryBuilder('u')
+            ->where('u.email = :email')
+            ->setParameter('email', $email)
+            ->getQuery()
+            ->getResult();
+
+        return $user;
+    }
+
+    public function findOneByPhone($phone)
+    {
+        $user = $this->createQueryBuilder('u')
+            ->where('u.phone = :phone')
+            ->setParameter('phone', $phone)
+            ->getQuery()
+            ->getResult();
+
+        return $user;
+    }
 }

@@ -1,0 +1,10 @@
+services:
+
+    #
+    # Object Managers
+    #
+    fomalhaut.object_manager.user:
+        parent: elcodi.abstract_manager
+        arguments:
+            - %fomalhaut.entity.user.class%
+

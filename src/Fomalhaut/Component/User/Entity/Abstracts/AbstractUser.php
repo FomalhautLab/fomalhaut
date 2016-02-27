@@ -24,6 +24,13 @@ class AbstractUser implements AbstractUserInterface
     /**
      * @var string
      *
+     * Username
+     */
+    protected $username;
+
+    /**
+     * @var string
+     *
      * Password
      */
     protected $password;
@@ -38,9 +45,9 @@ class AbstractUser implements AbstractUserInterface
     /**
      * @var string
      *
-     * Token
+     * Phone
      */
-    protected $token;
+    protected $phone;
 
     /**
      * @var string
@@ -64,6 +71,34 @@ class AbstractUser implements AbstractUserInterface
     protected $gender;
 
     /**
+     * Get username.
+     *
+     * @return string Username
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * Set username.
+     *
+     * @param string $username Username
+     *
+     * @return $this Self object
+     */
+    public function setUsername($username)
+    {
+        if (null === $username) {
+            return $this;
+        }
+
+        $this->username = $username;
+
+        return $this;
+    }
+
+    /**
      * User roles.
      *
      * @return string[] Roles
@@ -83,16 +118,6 @@ class AbstractUser implements AbstractUserInterface
     public function getSalt()
     {
         return '';
-    }
-
-    /**
-     * Get username.
-     *
-     * @return string Username
-     */
-    public function getUsername()
-    {
-        return $this->email;
     }
 
     /**
@@ -154,6 +179,30 @@ class AbstractUser implements AbstractUserInterface
     }
 
     /**
+     * Set phone.
+     *
+     * @param string $phone Phone
+     *
+     * @return $this
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Get phone.
+     *
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
      * @return string
      */
     public function getFirstname()
@@ -168,6 +217,10 @@ class AbstractUser implements AbstractUserInterface
      */
     public function setFirstname($firstname)
     {
+        if (null === $firstname) {
+            return $this;
+        }
+
         $this->firstname = $firstname;
 
         return $this;
@@ -188,6 +241,10 @@ class AbstractUser implements AbstractUserInterface
      */
     public function setLastname($lastname)
     {
+        if (null === $lastname) {
+            return $this;
+        }
+
         $this->lastname = $lastname;
 
         return $this;

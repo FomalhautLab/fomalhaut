@@ -1,0 +1,6 @@
+security:
+
+    encoders:
+        Fomalhaut\Component\User\Entity\User:
+            algorithm: bcrypt
+            cost:      15
