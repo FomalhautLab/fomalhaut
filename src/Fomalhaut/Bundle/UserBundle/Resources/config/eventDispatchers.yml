@@ -1,0 +1,9 @@
+services:
+
+    #
+    # Event Dispatchers
+    #
+    fomalhaut.event_dispatcher.user:
+        class: Fomalhaut\Component\User\EventDispatcher\UserEventDispatcher
+        parent: elcodi.event_dispatcher.abstract
+

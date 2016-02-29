@@ -105,6 +105,8 @@ class FomalhautUserExtension extends AbstractExtension implements EntitiesOverri
             'factories',
             'repositories',
             'objectManagers',
+            'directors',
+            'eventDispatchers',
         ];
     }
 

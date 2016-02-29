@@ -1,0 +1,13 @@
+services:
+
+    #
+    # Directors
+    #
+    fomalhaut.director.user:
+        class: Elcodi\Component\Core\Services\ObjectDirector
+        lazy: true
+        arguments:
+            - '@fomalhaut.object_manager.user'
+            - '@fomalhaut.repository.user'
+            - '@fomalhaut.factory.user'
+
