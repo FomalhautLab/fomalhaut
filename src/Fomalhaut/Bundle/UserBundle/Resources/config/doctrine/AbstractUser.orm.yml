@@ -31,3 +31,9 @@ Fomalhaut\Component\User\Entity\Abstracts\AbstractUser:
             type: string
             length: 255
             nullable: true
+        recoveryHash:
+            column: recovery_hash
+            type: string
+            length: 255
+            unique: true
+            nullable: true

@@ -7,3 +7,6 @@ services:
         class: Fomalhaut\Component\User\EventDispatcher\UserEventDispatcher
         parent: elcodi.event_dispatcher.abstract
 
+    fomalhaut.event_dispatcher.password:
+        class: Fomalhaut\Component\User\EventDispatcher\PasswordEventDispatcher
+        parent: elcodi.event_dispatcher.abstract

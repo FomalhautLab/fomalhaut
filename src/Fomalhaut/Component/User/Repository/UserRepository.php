@@ -17,11 +17,14 @@ namespace Fomalhaut\Component\User\Repository;
 
 use Doctrine\ORM\EntityRepository;
 
+use Fomalhaut\Component\User\Repository\Interfaces\UserEmaileableInterface;
+use Fomalhaut\Component\User\Entity\Interfaces\AbstractUserInterface;
+
 /**
  * Class UserRepository
  * @package Fomalhaut\Component\User\Repository
  */
-class UserRepository extends EntityRepository
+class UserRepository extends EntityRepository implements UserEmaileableInterface
 {
     public function findOneByUsername($username)
     {
@@ -36,23 +39,25 @@ class UserRepository extends EntityRepository
 
     public function findOneByEmail($email)
     {
-        $user = $this->createQueryBuilder('u')
-            ->where('u.email = :email')
-            ->setParameter('email', $email)
-            ->getQuery()
-            ->getResult();
+        $user = $this
+            ->findOneBy([
+                'email' => $email,
+            ]);
 
-        return $user;
+        return ($user instanceof AbstractUserInterface)
+            ? $user
+            : null;
     }
 
     public function findOneByPhone($phone)
     {
-        $user = $this->createQueryBuilder('u')
-            ->where('u.phone = :phone')
-            ->setParameter('phone', $phone)
-            ->getQuery()
-            ->getResult();
+        $user = $this
+            ->findOneBy([
+                'phone' => $phone,
+            ]);
 
-        return $user;
+        return ($user instanceof AbstractUserInterface)
+            ? $user
+            : null;
     }
 }

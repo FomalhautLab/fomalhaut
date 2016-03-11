@@ -36,4 +36,20 @@ class FomalhautUserEvents
      * event.class : UserRegisterEvent
      */
     const USER_REGISTER = 'user.register';
+
+    /**
+     * This event is fired when user wants to remember his password.
+     *
+     * event.name : password.remember
+     * event.class : PasswordRememberEvent
+     */
+    const PASSWORD_REMEMBER = 'password.remember';
+
+    /**
+     * This event is fired when customer wants to recover his password.
+     *
+     * event.name : password.recover
+     * event.class : PasswordRecoverEvent
+     */
+    const PASSWORD_RECOVER = 'password.recover';
 }

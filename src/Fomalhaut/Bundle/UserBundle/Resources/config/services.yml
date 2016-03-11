@@ -1,4 +1,11 @@
 services:
-#    fomalhaut_user.example:
-#        class: Fomalhaut\Bundle\UserBundle\Example
-#        arguments: ["@service_id", "plain_value", %parameter%]
+    #
+    # Services
+    #
+    fomalhaut.manager.password:
+        class: Fomalhaut\Component\User\Services\PasswordManager
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@router'
+            - '@fomalhaut.event_dispatcher.password'
+            - '@elcodi.generator.sha1'

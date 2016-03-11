@@ -5,3 +5,12 @@ security:
             entity:
                 class: %fomalhaut.entity.user.class%
                 property: email
+
+services:
+    fomalhaut.event_listener.customer_password:
+        class: Fomalhaut\Component\User\EventListener\UserPasswordEventListener
+        arguments:
+            - '@fomalhaut.provider.user_provider'
+        tags:
+            - { name: doctrine.event_listener, event: preUpdate, method: preUpdate }
+            - { name: doctrine.event_listener, event: prePersist, method: prePersist }

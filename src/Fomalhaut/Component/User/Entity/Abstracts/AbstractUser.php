@@ -70,6 +70,14 @@ class AbstractUser implements AbstractUserInterface
      */
     protected $gender;
 
+
+    /**
+     * @var string
+     *
+     * Recovery hash
+     */
+    protected $recoveryHash;
+
     /**
      * Get username.
      *
@@ -270,6 +278,30 @@ class AbstractUser implements AbstractUserInterface
     public function setGender($gender)
     {
         $this->gender = (int) $gender;
+
+        return $this;
+    }
+
+    /**
+     * Get recovery hash.
+     *
+     * @return string Recovery Hash
+     */
+    public function getRecoveryHash()
+    {
+        return $this->recoveryHash;
+    }
+
+    /**
+     * Set recovery hash.
+     *
+     * @param string $recoveryHash
+     *
+     * @return $this Self object
+     */
+    public function setRecoveryHash($recoveryHash)
+    {
+        $this->recoveryHash = $recoveryHash;
 
         return $this;
     }
