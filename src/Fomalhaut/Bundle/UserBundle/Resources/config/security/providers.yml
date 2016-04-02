@@ -4,7 +4,7 @@ security:
         user:
             entity:
                 class: %fomalhaut.entity.user.class%
-                property: email
+                property: username
 
 services:
     fomalhaut.event_listener.customer_password:
