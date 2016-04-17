@@ -1,0 +1,4 @@
+services:
+#    fomalhaut_media.example:
+#        class: Fomalhaut\Bundle\MediaBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
