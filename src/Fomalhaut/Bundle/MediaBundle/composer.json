@@ -1,0 +1,24 @@
+{
+    "name": "fomalhaut/media-bundle",
+    "description": "Fomalhaut User Bundle",
+    "type": "symfony-bundle",
+    "require": {
+        "elcodi/core-bundle": "^1.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "yellowbig",
+            "email": "dahwang@126.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "exclude-from-classmap": [
+            "/Tests/"
+        ],
+        "psr-4": {
+            "Fomalhaut\\Bundle\\UserBundle\\": ""
+        }
+    }
+}

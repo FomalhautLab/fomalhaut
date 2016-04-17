@@ -2,8 +2,17 @@
 
 namespace Fomalhaut\Bundle\MediaBundle;
 
-use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Elcodi\Bundle\CoreBundle\Abstracts\AbstractElcodiBundle;
 
-class FomalhautMediaBundle extends Bundle
+use Fomalhaut\Bundle\MediaBundle\DependencyInjection\FomalhautMediaExtension;
+
+class FomalhautMediaBundle extends AbstractElcodiBundle
 {
+    /**
+     * @return FomalhautMediaExtension
+     */
+    public function getContainerExtension()
+    {
+        return new FomalhautMediaExtension();
+    }
 }
