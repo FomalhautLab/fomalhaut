@@ -1,0 +1,7 @@
+services:
+
+    #
+    # Adapters
+    #
+    fomalhaut.adapter.qiniu:
+        class: Fomalhaut\Component\Media\Adapter\Qiniu

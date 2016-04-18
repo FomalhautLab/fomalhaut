@@ -1,3 +1,0 @@
-fomalhaut_media_homepage:
-    path:     /
-    defaults: { _controller: FomalhautMediaBundle:Default:index }
