@@ -16,9 +16,15 @@
 namespace Fomalhaut\Component\Media\Adapter;
 
 use Gaufrette\Adapter;
+use Qiniu\Auth as QiniuAuth;
 
 class Qiniu implements Adapter
 {
+    /**
+     * @var QiniuAuth
+     */
+    protected $qiniuAuth;
+
     /**
      * {@inheritDoc}
      */

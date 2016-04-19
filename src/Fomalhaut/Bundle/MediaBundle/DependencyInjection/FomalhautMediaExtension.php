@@ -75,10 +75,10 @@ class FomalhautMediaExtension extends AbstractExtension
     protected function getParametrizationValues(array $config)
     {
         return [
-            'fomalhaut.entity.media.class' => $config['mapping']['media']['class'],
+            /*'fomalhaut.entity.media.class' => $config['mapping']['media']['class'],
             'fomalhaut.entity.media.mapping_file' => $config['mapping']['media']['mapping_file'],
             'fomalhaut.entity.media.manager' => $config['mapping']['media']['manager'],
-            'fomalhaut.entity.media.enabled' => $config['mapping']['media']['enabled'],
+            'fomalhaut.entity.media.enabled' => $config['mapping']['media']['enabled'],*/
 
             //todo:other parametrization definition
         ];
