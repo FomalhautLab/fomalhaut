@@ -1,0 +1,13 @@
+services:
+
+    #
+    # Repositories
+    #
+
+    #
+    # Repository for entity image
+    #
+    fomalhaut.repository.image:
+        parent: elcodi.abstract_repository
+        arguments:
+            - %fomalhaut.entity.image.class%

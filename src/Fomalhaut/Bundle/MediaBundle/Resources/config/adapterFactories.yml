@@ -1,9 +1,0 @@
-services:
-
-    #
-    # Adapter factories
-    #
-    fomalhaut.adapter_factory.qiniu:
-        class: Fomalhaut\Bundle\MediaBundle\DependencyInjection\Factory\QiniuAdapterFactory
-        tags:
-            - { name: gaufrette.adapter.factory }

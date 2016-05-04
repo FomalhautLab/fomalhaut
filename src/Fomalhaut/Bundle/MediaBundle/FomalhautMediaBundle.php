@@ -15,12 +15,25 @@
 
 namespace Fomalhaut\Bundle\MediaBundle;
 
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+
 use Elcodi\Bundle\CoreBundle\Abstracts\AbstractElcodiBundle;
 
+use Fomalhaut\Bundle\MediaBundle\CompilerPass\MappingCompilerPass;
 use Fomalhaut\Bundle\MediaBundle\DependencyInjection\FomalhautMediaExtension;
 
 class FomalhautMediaBundle extends AbstractElcodiBundle
 {
+    /**
+     * @param ContainerBuilder $container
+     */
+    public function build(ContainerBuilder $container)
+    {
+        parent::build($container);
+
+        $container->addCompilerPass(new MappingCompilerPass());
+    }
+
     /**
      * @return FomalhautMediaExtension
      */

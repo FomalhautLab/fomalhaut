@@ -30,6 +30,21 @@ class Configuration extends AbstractConfiguration
      */
     protected function setupTree(ArrayNodeDefinition $rootNode)
     {
-
+        $rootNode
+            ->children()
+                ->arrayNode('mapping')
+                    ->addDefaultsIfNotSet()
+                    ->children()
+                        ->append($this->addMappingNode(
+                            'image',
+                            'Fomalhaut\Component\Media\Entity\Image',
+                            '@FomalhautMediaBundle/Resources/config/doctrine/Image.orm.yml',
+                            'default',
+                            true
+                        ))
+                    ->end()
+                ->end()
+            ->end()
+        ;
     }
 }
