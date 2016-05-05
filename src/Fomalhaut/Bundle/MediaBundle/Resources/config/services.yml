@@ -1,4 +1,10 @@
 services:
-#    fomalhaut_media.example:
-#        class: Fomalhaut\Bundle\MediaBundle\Example
-#        arguments: ["@service_id", "plain_value", %parameter%]
+
+    #
+    # Service
+    #
+    fomalhaut.manager.media_file:
+        class: Fomalhaut\Component\Media\Services\FileManager
+        arguments:
+            - '@fomalhaut.media_filesystem'
+            - '@fomalhaut.transformer.media_file_identifier'

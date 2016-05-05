@@ -44,6 +44,11 @@ class Configuration extends AbstractConfiguration
                         ))
                     ->end()
                 ->end()
+
+                ->scalarNode('filesystem')
+                    ->defaultValue('bootes_app.adapters.meida_adapter_qiniu')
+                    //todo:->defaultValue('gaufrette.local_filesystem')
+                ->end()
             ->end()
         ;
     }

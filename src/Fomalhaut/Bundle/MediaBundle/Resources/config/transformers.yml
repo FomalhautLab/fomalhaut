@@ -1,0 +1,7 @@
+services:
+
+    #
+    # Transformers
+    #
+    fomalhaut.transformer.media_file_identifier:
+        class: Fomalhaut\Component\Media\Transformer\FileIdentifierTransformer

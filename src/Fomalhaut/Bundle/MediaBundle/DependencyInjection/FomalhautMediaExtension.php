@@ -16,6 +16,7 @@
 namespace Fomalhaut\Bundle\MediaBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\ConfigurationInterface;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 use Elcodi\Bundle\CoreBundle\DependencyInjection\Abstracts\AbstractExtension;
 
@@ -80,6 +81,8 @@ class FomalhautMediaExtension extends AbstractExtension
             'fomalhaut.entity.image.manager' => $config['mapping']['image']['manager'],
             'fomalhaut.entity.image.enabled' => $config['mapping']['image']['enabled'],
 
+            'fomalhaut.media_filesystem_service' => $config['filesystem'],
+
             //todo:other parametrization definition
         ];
     }
@@ -97,7 +100,25 @@ class FomalhautMediaExtension extends AbstractExtension
             //todo:ConfigFiles
             'services',
             'repositories',
+            'transformers',
         ];
+    }
+
+
+    /**
+     * Post load implementation.
+     *
+     * @param ContainerBuilder $container A ContainerBuilder instance
+     * @param array            $config    Parsed configuration
+     */
+    protected function postLoad(array $config, ContainerBuilder $container)
+    {
+        parent::postLoad($config, $container);
+
+        $container->setAlias(
+            'fomalhaut.media_filesystem',
+            $container->getParameter('fomalhaut.media_filesystem_service')
+        );
     }
 
     /**
@@ -107,6 +128,7 @@ class FomalhautMediaExtension extends AbstractExtension
     {
         return [
             //todo:'Fomalhaut\Component\____\Entity\Interfaces\___Interface' => 'fomalhaut.entity.___.class',
+            'Fomalhaut\Component\Media\Entity\Interfaces\ImageInterface' => 'fomalhaut.entity.image.class',
         ];
     }
 
