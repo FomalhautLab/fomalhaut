@@ -83,6 +83,13 @@ class FomalhautMediaExtension extends AbstractExtension
 
             'fomalhaut.media_filesystem_service' => $config['filesystem'],
 
+            'fomalhaut.image_generated_route_host' => $config['images']['generated_route_host'],
+            'fomalhaut.image_view_max_age' => $config['images']['view']['max_age'],
+            'fomalhaut.image_view_shared_max_age' => $config['images']['view']['shared_max_age'],
+            'fomalhaut.image_upload_field_name' => $config['images']['upload']['field_name'],
+            
+            'fomalhaut.image_resize_converter_bin_path' => $config['images']['resize']['converter_bin_path'],
+            'fomalhaut.image_resize_converter_default_profile' => $config['images']['resize']['converter_default_profile'],
             //todo:other parametrization definition
         ];
     }
@@ -101,6 +108,9 @@ class FomalhautMediaExtension extends AbstractExtension
             'services',
             'repositories',
             'transformers',
+            'adapters',
+            'eventDispatchers',
+            'factories',
         ];
     }
 
@@ -118,6 +128,11 @@ class FomalhautMediaExtension extends AbstractExtension
         $container->setAlias(
             'fomalhaut.media_filesystem',
             $container->getParameter('fomalhaut.media_filesystem_service')
+        );
+
+        $container->setAlias(
+            'fomalhaut.media_resize_adapter',
+            $config['images']['resize']['adapter']
         );
     }
 

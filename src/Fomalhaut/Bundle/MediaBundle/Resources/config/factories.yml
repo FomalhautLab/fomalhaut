@@ -7,8 +7,8 @@ services:
     #
     # Factory for entity image
     #
-    elcodi.factory.image:
-        class: Elcodi\Component\Media\Factory\ImageFactory
+    fomalhaut.factory.image:
+        class: Fomalhaut\Component\Media\Factory\ImageFactory
         calls:
-            - [setEntityNamespace, ["%elcodi.entity.image.class%"]]
+            - [setEntityNamespace, ["%fomalhaut.entity.image.class%"]]
             - [setDateTimeFactory, ["@elcodi.factory.datetime"]]

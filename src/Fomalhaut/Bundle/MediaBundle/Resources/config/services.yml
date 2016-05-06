@@ -8,3 +8,10 @@ services:
         arguments:
             - '@fomalhaut.media_filesystem'
             - '@fomalhaut.transformer.media_file_identifier'
+
+    fomalhaut.manager.media_image:
+        class: Fomalhaut\Component\Media\Services\ImageManager
+        arguments:
+            - '@fomalhaut.factory.image'
+            - '@fomalhaut.manager.media_file'
+            - '@fomalhaut.media_resize_adapter'
