@@ -1,0 +1,9 @@
+services:
+
+    #
+    # Object Managers
+    #
+    fomalhaut.object_manager.image:
+        parent: elcodi.abstract_manager
+        arguments:
+            - %fomalhaut.entity.image.class%

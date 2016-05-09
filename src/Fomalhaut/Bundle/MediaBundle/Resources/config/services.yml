@@ -15,3 +15,11 @@ services:
             - '@fomalhaut.factory.image'
             - '@fomalhaut.manager.media_file'
             - '@fomalhaut.media_resize_adapter'
+
+    fomalhaut.uploader.image:
+        class: Fomalhaut\Component\Media\Services\ImageUploader
+        arguments:
+            - '@fomalhaut.object_manager.image'
+            - '@fomalhaut.manager.media_file'
+            - '@fomalhaut.manager.media_image'
+            - '@fomalhaut.event_dispatcher.media'            

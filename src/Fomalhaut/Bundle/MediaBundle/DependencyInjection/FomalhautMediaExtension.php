@@ -111,6 +111,7 @@ class FomalhautMediaExtension extends AbstractExtension
             'adapters',
             'eventDispatchers',
             'factories',
+            'objectManagers',
         ];
     }
 
